@@ -1,12 +1,14 @@
 {
   "name": "all-in-one-ai-platform",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:push": "supabase db push",
+    "db:reset": "supabase db reset"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.1",
@@ -19,6 +21,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@supabase/cli": "^1.118.0",
     "@types/node": "20.14.12",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
