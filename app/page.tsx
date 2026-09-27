@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const stats = [
   { label: 'Study streak', value: '12 days', trend: '+4%' },
   { label: 'Income tracked', value: '$1,240', trend: '+$280' },
@@ -50,14 +52,19 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <header className="mb-8 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur">
+        <header className="mb-8 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-brand-300">AI Operating System</p>
             <h1 className="mt-2 text-2xl font-bold">All-in-One AI Platform</h1>
           </div>
-          <button className="rounded-full bg-brand-500 px-5 py-2.5 text-sm font-medium text-white shadow-glow transition hover:bg-brand-400">
-            Launch workspace
-          </button>
+          <div className="flex items-center gap-3">
+            <Link href="/dashboard" className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-200 hover:bg-white/5">
+              Dashboard
+            </Link>
+            <Link href="/study" className="rounded-full border border-brand-500/40 bg-brand-500 px-5 py-2.5 text-sm font-medium text-white shadow-glow transition hover:bg-brand-400">
+              Launch workspace
+            </Link>
+          </div>
         </header>
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -136,9 +143,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-5 flex gap-3">
-              <button className="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-400">
+              <Link href="/dashboard" className="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-400">
                 Run AI task
-              </button>
+              </Link>
               <button className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-200 hover:bg-white/5">
                 Save workflow
               </button>

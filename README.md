@@ -9,7 +9,7 @@ A cloud-ready AI platform for learning, productivity, automation, device managem
 - Content creation studio for articles, social posts, scripts, and images
 - Money-tracking and automation dashboard
 - Account and device management hub
-- Google/Gmail, WhatsApp, and phone integration-ready architecture
+- Google, Gmail, WhatsApp, and device integration-ready architecture
 - Cloud-first scalable foundation for later desktop and mobile deployment
 
 ## Tech stack
@@ -36,11 +36,11 @@ Create a `.env.local` file with the following values:
 
 ```bash
 NEXT_PUBLIC_APP_NAME="All-in-One AI Platform"
-OPENAI_API_KEY="your-key"
-GEMINI_API_KEY="your-key"
-CLAUDE_API_KEY="your-key"
 NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
 NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+OPENAI_API_KEY=""
+GEMINI_API_KEY=""
+CLAUDE_API_KEY=""
 ```
 
 ## Roadmap

@@ -1,0 +1,61 @@
+import Link from 'next/link';
+
+const studyModules = [
+  { title: 'Book summary engine', status: 'Ready' },
+  { title: 'Course builder', status: 'Drafting' },
+  { title: 'Flashcard generator', status: 'Queued' },
+  { title: 'Step-by-step lesson planner', status: 'Ready' },
+];
+
+export default function StudyPage() {
+  return (
+    <main className="min-h-screen bg-slate-950 p-6 text-white">
+      <div className="mx-auto max-w-6xl">
+        <header className="mb-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-900 p-5 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-brand-300">Study system</p>
+            <h1 className="mt-2 text-3xl font-bold">AI-powered learning workspace</h1>
+          </div>
+          <div className="flex gap-3">
+            <Link href="/dashboard" className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-200 hover:bg-white/5">
+              Dashboard
+            </Link>
+            <Link href="/" className="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-400">
+              Home
+            </Link>
+          </div>
+        </header>
+
+        <section className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-white/10 bg-slate-900 p-6">
+            <h2 className="text-xl font-semibold">Book analysis</h2>
+            <div className="mt-4 rounded-2xl border border-brand-500/30 bg-slate-950 p-4">
+              <p className="text-sm text-slate-400">Book</p>
+              <p className="mt-2 text-lg font-medium text-brand-200">Atomic Habits</p>
+              <p className="mt-4 text-sm leading-6 text-slate-300">
+                Generate a 7-day study roadmap, chapter summaries, a lesson plan, and a final action checklist.
+              </p>
+            </div>
+            <button className="mt-5 rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-400">
+              Generate study plan
+            </button>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900 p-6">
+            <h2 className="text-xl font-semibold">Modules</h2>
+            <div className="mt-4 space-y-3">
+              {studyModules.map((item) => (
+                <div key={item.title} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-950 p-3">
+                  <span className="text-sm text-slate-200">{item.title}</span>
+                  <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-xs text-emerald-300">
+                    {item.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
